@@ -1,6 +1,7 @@
 ﻿  postfix_test_postfix.cpp
-d:\visual studio 2015\postfix\postfix_body\tpostfix.h(124): warning C4018: >: несоответствие типов со знаком и без знака
-d:\visual studio 2015\postfix\postfix_body\tpostfix.h(245): warning C4018: <: несоответствие типов со знаком и без знака
+d:\visual studio 2015\postfix\postfix_body\tpostfix.h(115): warning C4018: <: несоответствие типов со знаком и без знака
+d:\visual studio 2015\postfix\postfix_body\tpostfix.h(127): warning C4018: >: несоответствие типов со знаком и без знака
+d:\visual studio 2015\postfix\postfix_body\tpostfix.h(244): warning C4018: <: несоответствие типов со знаком и без знака
 d:\visual studio 2015\postfix\gtest\gtest.h(18863): warning C4805: ==: небезопасное смешение типа "const int" и типа "const bool" в операции
   d:\visual studio 2015\postfix\gtest\gtest.h(18900): note: см. ссылку на создание экземпляров функции шаблон при компиляции "testing::AssertionResult testing::internal::CmpHelperEQ<T1,T2>(const char *,const char *,const T1 &,const T2 &)"
           with
@@ -20,6 +21,6 @@ d:\visual studio 2015\postfix\gtest\gtest.h(18863): warning C4805: ==: небе�
               T1=int,
               T2=bool
           ]
-d:\visual studio 2015\postfix\postfix_body\tpostfix.h(158): warning C4715: TPostfix::PrOperation: значение возвращается не при всех путях выполнения
+d:\visual studio 2015\postfix\postfix_body\tpostfix.h(161): warning C4715: TPostfix::PrOperation: значение возвращается не при всех путях выполнения
   postfix.vcxproj -> D:\Visual Studio 2015\postfix\Debug\postfix.exe
   postfix.vcxproj -> D:\Visual Studio 2015\postfix\Debug\postfix.pdb (Full PDB)

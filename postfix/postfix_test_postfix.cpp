@@ -69,8 +69,8 @@ TEST(TPostfix, simple_subtraction_test)
 
 TEST(TPostfix, mixed_test_number_one)
 {
-	string expression = "a+b*c";
-	string result = "a b c *+";
+	string expression = "2+3*4";
+	string result = "2 3 4 *+";
 	TPostfix postfix(expression);
 	postfix.ToPostfix();
 	EXPECT_EQ(result, postfix.GetPostfix());
@@ -78,8 +78,8 @@ TEST(TPostfix, mixed_test_number_one)
 
 TEST(TPostfix, mixed_test_number_two)
 {
-	string expression = "a+b-c*d";
-	string result = "a b +c d *-";
+	string expression = "2+3-4*5";
+	string result = "2 3 +4 5 *-";
 	TPostfix postfix(expression);
 	postfix.ToPostfix();
 	EXPECT_EQ(result, postfix.GetPostfix());
@@ -94,10 +94,30 @@ TEST(TPostfix, mixed_test_number_three_cos_sin)
 	EXPECT_EQ(result, postfix.GetPostfix());
 }
 
+TEST(TPostfix, test_with_minus_one)
+{
+	string expression = "-4+3";
+	string result = "0 4 -3 +";
+	TPostfix postfix(expression);
+	postfix.ToPostfix();
+	EXPECT_EQ(result, postfix.GetPostfix());
+}
+
+TEST(TPostfix, test_with_minus_two)
+{
+	string expression = "-4+3*(-2+4)";
+	string result = "0 4 -3 0 2 -4 +*+";
+	TPostfix postfix(expression);
+	postfix.ToPostfix();
+	EXPECT_EQ(result, postfix.GetPostfix());
+}
+
+
+
 TEST(TPostfix, test_with_sin_and_minus)
 {
 	string expression = "sin(sin(-2+2))";
-	string result = "2 -2 +sinsin";
+	string result = "0 2 -2 +sinsin";
 	TPostfix postfix(expression);
 	postfix.ToPostfix();
 	EXPECT_EQ(result, postfix.GetPostfix());
@@ -121,6 +141,15 @@ TEST(TPostfix, calculate_with__minus_two)
 	EXPECT_EQ(result, postfix.Calculate());
 }
 
+TEST(TPostfix, test_with_minus_three)
+{
+	string expression = "-4+3*(-2+4)";
+	double result = 2;
+	TPostfix postfix(expression);
+	postfix.ToPostfix();
+	EXPECT_EQ(result, postfix.Calculate());
+}
+
 TEST(TPostfix, calculate_with_sin_and_minus)
 {
 	string expression = "sin(sin(-2+2))";
@@ -130,12 +159,3 @@ TEST(TPostfix, calculate_with_sin_and_minus)
 	EXPECT_EQ(result, postfix.Calculate());
 }
 
-TEST(TPostfix, mixed_calculate)
-{
-	string expression = "(1+sin(1+cos(2+2*2))/3)*1";
-	double result = 1.0116;
-	TPostfix postfix(expression);
-	postfix.ToPostfix();
-	double res = postfix.Calculate();
-	EXPECT_EQ(result, res);
-}

@@ -22,7 +22,6 @@ public:
 	void Push(Valtype val); //добавить элемент 
 	Valtype Pop(); // вернуть значение верхнего и удалить его из стека 
 	Valtype Show(); // вернуть значение верхнего, не удаляя его из стека 
-	//TStack operator=(const TStack &st)
 };
 
 template<class Valtype>
@@ -46,28 +45,11 @@ TStack<Valtype>::TStack(int _Size)
 	}
 }
 
-/*template<class Valtype>
-TStack<Valtype>::TStack(const TStack &v)
-{ 
-
-}*/
-
 template<class Valtype>
 TStack<Valtype>::~TStack()
 {
 	delete[] pStack;
 }
-
-/*template<class Valtype>
-TStack<Valtype> &TStack<Valtype>::operator=(const TStack &st)
-{
-	delete[] pStack;
-	Mem = new Valtype[MemSize];
-	Index = st.Index;
-	for (int i = 0; i<Index; i++)
-		Mem[i] = st.Mem[i];
-	return *this;
-}*/
 
 template<class Valtype>
 bool TStack<Valtype>::IsEmpty() //проверка пустоты	
@@ -97,7 +79,6 @@ void TStack<Valtype>::Push(Valtype val) //добавить элемент
 	else
 		pStack[++Index] = val;
 }
-
 
 template<class Valtype>
 Valtype TStack<Valtype>::Pop() //достать элемент

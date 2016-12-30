@@ -1,2 +1,7 @@
-﻿  postfix_body.vcxproj -> D:\Visual Studio 2015\postfix\Debug\postfix_body.exe
+﻿  sample.cpp
+d:\visual studio 2015\postfix\postfix_body\tpostfix.h(115): warning C4018: <: несоответствие типов со знаком и без знака
+d:\visual studio 2015\postfix\postfix_body\tpostfix.h(127): warning C4018: >: несоответствие типов со знаком и без знака
+d:\visual studio 2015\postfix\postfix_body\tpostfix.h(244): warning C4018: <: несоответствие типов со знаком и без знака
+d:\visual studio 2015\postfix\postfix_body\tpostfix.h(161): warning C4715: TPostfix::PrOperation: значение возвращается не при всех путях выполнения
+  postfix_body.vcxproj -> D:\Visual Studio 2015\postfix\Debug\postfix_body.exe
   postfix_body.vcxproj -> D:\Visual Studio 2015\postfix\Debug\postfix_body.pdb (Full PDB)

@@ -18,15 +18,17 @@ int main()
 		if (expression == "0")
 			break;
 		TPostfix postfix(expression);
-		postfix.IsCorrect(expression);
-		cout << expression << endl;
-		postfix = expression;
-		cout << "Арифметическое выражение: " << expression << endl;
+		//postfix.IsCorrect(expression);
+		//postfix.CorrectWithUnarMinus();
+		//cout << "infix" << << endl;
+		//cout << expression << endl;
+		//postfix = expression;
+		cout << "Арифметическое выражение: " << postfix.GetInfix() << endl;
 
 		postfix.ToPostfix();
 		cout << "Постфиксная форма: " << postfix.GetPostfix() << endl;
 		res = postfix.Calculate();
-		cout << res << endl;
+		cout <<"Результат: "<< res <<endl<< endl;
 	}
 
 	return 0;
